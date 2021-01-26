@@ -6,7 +6,7 @@
   <link href="https://cherr0.github.io/atom.xml" rel="self"/>
   
   <link href="https://cherr0.github.io/"/>
-  <updated>2021-01-25T15:51:59.411Z</updated>
+  <updated>2021-01-26T08:44:27.654Z</updated>
   <id>https://cherr0.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Second New Post</title>
+    <link href="https://cherr0.github.io/2021/01/26/Second-New-Post/"/>
+    <id>https://cherr0.github.io/2021/01/26/Second-New-Post/</id>
+    <published>2021-01-26T08:26:23.000Z</published>
+    <updated>2021-01-26T08:44:27.654Z</updated>
+    
+    <content type="html"><![CDATA[<p>본문이 이렇게 있을 때 여기까지만 인덱스 페이지에 나타납니다.</p><a id="more"></a><p>여기서부턴 인덱스에 안나옵니다.</p><p>여기까지의 내용은 인덱스 페이지에만 나타납니다.</p><p>여기서부턴 본문 시작입니다.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;본문이 이렇게 있을 때 여기까지만 인덱스 페이지에 나타납니다.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>My New Post</title>
