@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cherr0.github.io/sitemap.xml
