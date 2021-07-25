@@ -3277,6 +3277,50 @@ figure.highlight,
   .codeblock.yml .number {
     color: #0086b3; }
 
+@media screen and (min-width: 768px) {
+  #article-toc {
+    display: block;
+    align-self: start;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    position: sticky;
+    top: 0;
+    padding-top: 24px;
+  }
+
+  #article-toc h2 {
+    margin-bottom: 24px;
+  }
+
+  #article-toc li {
+    letter-spacing: 1px;
+  }
+
+  #article-toc li ol.toc-child {
+    margin-left: 16px;
+  }
+
+  #article-toc li a {
+    display: block;
+    padding: 8px 0 8px 16px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 200ms;
+  }
+
+  #article-toc li a:hover {
+    opacity: 1;
+  }
+
+  #article-toc li.active > a {
+    opacity: 1;
+    border-left: 4px solid;
+    margin-left: -4px;
+  }
+}
+
 /*
 // Default code block
 pre > code {
