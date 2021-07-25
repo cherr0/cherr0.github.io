@@ -191,6 +191,10 @@ blockquote {
   blockquote > p:first-child {
     margin: 0; }
 
+#article-toc {
+  display: none;
+}
+
 @media only screen and (max-width: 767px) {
   code {
     font-size: 1.4rem; }
@@ -3299,7 +3303,6 @@ figure.highlight,
 
   #article-toc li a {
     display: block;
-    padding: 8px 0 8px 0;
     color: rgb(124, 115, 115);
     font-weight: 600;
     text-decoration: none;
