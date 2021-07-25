@@ -3299,7 +3299,7 @@ figure.highlight,
 
   #article-toc li a {
     display: block;
-    padding: 8px 0 8px 16px;
+    padding: 8px 0 8px 0;
     color: #333;
     font-weight: 600;
     text-decoration: none;
@@ -3312,6 +3312,7 @@ figure.highlight,
   }
 
   #article-toc li.active > a {
+    color: #349ef3;
     opacity: 1;
     border-left: 4px solid;
     margin-left: -4px;
