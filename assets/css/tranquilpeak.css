@@ -52,6 +52,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   tap-highlight-color: rgba(0, 0, 0, 0); }
 
@@ -3294,10 +3295,6 @@ figure.highlight,
 
   #article-toc li {
     letter-spacing: 1px;
-  }
-
-  #article-toc li ol.toc-child {
-    margin-left: 16px;
   }
 
   #article-toc li a {
