@@ -3300,7 +3300,7 @@ figure.highlight,
   #article-toc li a {
     display: block;
     padding: 8px 0 8px 0;
-    color: #333;
+    color: rgb(124, 115, 115);
     font-weight: 600;
     text-decoration: none;
     opacity: 0.8;
