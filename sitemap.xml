@@ -13,11 +13,6 @@
     </sitemap>
 
     <sitemap>
-        <loc>https://cherr0.github.io/category-sitemap.xml</loc>
-        <lastmod>2021-01-28T05:04:07.915Z</lastmod>
-    </sitemap>
-
-    <sitemap>
         <loc>https://cherr0.github.io/tag-sitemap.xml</loc>
         <lastmod>2022-01-09T04:30:30.676Z</lastmod>
     </sitemap>
