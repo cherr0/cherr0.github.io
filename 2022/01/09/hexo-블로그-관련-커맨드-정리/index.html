@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Cherr0 blogs">
+    <title>hexo 블로그 관련 커맨드 정리 - Cherr0 blogs</title>
+    <meta name="author" content="체로">
+    
+        <meta name="keywords" content="hexo,javascript,typescript,">
+    
+    
+    
+        
+            <link rel="alternate" type="application/atom+xml" title="RSS" href="/rss2.xml">
+        
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"체로","sameAs":["https://github.com/cherr0","http://stackoverflow.com/users"],"image":"kabu.jpg"},"articleBody":"hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리\n\n서버 관련 커맨드\n서버 실행\nhexo server\n// or\nhexo s\n\n// port change\nhexo s -p 23777\n\n// static mode (파일 변경 감지 X)\nhexo s -s\n\n// ip change\nhexo s -i 192.168.1.1\n\n글 관련 hexo 커맨드\n초안 글 작성\nhexo에서는 초안으로 글을 작성할 수 있도록 기능을 제공한다.\n초안으로 작성된 글은 source &gt; _draft 폴더에 저장이 된다.\n초안 글 작성 : hexo new draft '파일명'\n초안 글 로컬 서버에서 확인 : hexo server --draft -o\n초안으로 작성된 글을 post폴더로 이동 : hexo publish '파일명'\n글쓰기, 새 포스트 생성\n# hexo new 레이아웃 종류 '타이틀' 타이틀은 파일명도 되고 포스팅도 제목도 됨\n$ hexo new [layout] &lt;title&gt;\n\n# 예제\n$ hexo new post '파일명'\n\n글 수정, 삭제\n기존에 만들어진 파일들을 수동으로 수정, 삭제한 후 배포를 진행하면 된다.\n혹시 모를 캐시에 대한 에러를 대비하여 clean 후 배포한다.\n$ hexo clean\n$ hexo g -d\n\n배포 관련 커맨드\n로컬 서버에서 확인 : hexo s\n\ndraft 확인 시 --draft 추가\n\n정적 파일 생성 : hexo g === hexo generate\n정적파일로 생성된 포스팅을 깃허브에 배포 : hexo d === hexo deploy\n정적파일 생성 후 바로 배포 : hexo g -d\n글 작성 기본 셋팅\n상단 구성\n---\nlayout: post\ntitle:  &quot;Welcome to devlopr !&quot;\nsummary: Hello World ! This is a sample post\nauthor: John Doe\ndate: '2019-05-22 14:35:23 +0530'\nthumbnail: /assets/img/posts/code.jpg\ntags :\n- 헥소\n- 깃허브\ncategories : \n- 카테고리명 #(예) 깃허브\n- 서브 카테고리명 #(예) 핵소\n---\n\ntitle : 생성 시 사용한 파일명이 입력되고 제목이 되는 부분.\ndate : 파일을 생성한 날짜와 시간이 입력됨\ntags : 카테고리처럼 연관된 태그를 작성하여 관리가 가능함\ncategories : 기본 머리말에는 추가가 되어있지 않지만 추가할 수 있다. scaffolds 폴더 post.md 파일을 열어 수정할수도 있고 글 작성 시마다 추가해도 된다.\n 💡 이런식으로도 사용 가능함 categories : [깃허브, 헥소] tags : [깃허브, 헥소]\n\n목록 페이지 요약글\n&lt;!-- more --&gt; 을 사용해서 글목록에서 보여지는 요약글을 사용할 수 있다.\n---\ntitle:\ndate:\ncategories:\ntags:\n---\n\n본문이 이렇게 있을 때 여기까지만 인덱스 페이지에 나타납니다.\n&lt;!-- more --&gt;\n\n이 이하는 인덱스 페이지에 표시되지 않습니다.\n\n글 작성 시 필요한 것\n깃허브 블로그에서 글 작성을 할 경우 마크다운 형식으로 글을 작성하게 된다.\n주 사용 에디터\n\n\nVS code\n\n\nTypora : https://typora.io/\n심플해서 사용하기 편함\n\n\nStack Edit : https://stackedit.io\nWeb app 기반이라 설치없이 바로 사용가능\n\n\n하루패드 : http://pad.haroopress.com/\n\n\n목차 생성\n각 테마에 따라서 사용하는 방법은 다르지만 tranquilpeak 에선\n&lt;!-- toc --&gt; 를 원하는 곳에 작성하면 헤더에 맞춰서 글 목차가 생성된다.\n\n","dateCreated":"2022-01-09T13:21:57+09:00","dateModified":"2022-01-09T13:30:30+09:00","datePublished":"2022-01-09T13:21:57+09:00","description":"hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리","headline":"hexo 블로그 관련 커맨드 정리","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/"},"publisher":{"@type":"Organization","name":"체로","sameAs":["https://github.com/cherr0","http://stackoverflow.com/users"],"image":"kabu.jpg","logo":{"@type":"ImageObject","url":"kabu.jpg"}},"url":"https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/","keywords":"hexo"}</script>
+    <meta name="description" content="hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="hexo 블로그 관련 커맨드 정리">
+<meta property="og:url" content="https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/index.html">
+<meta property="og:site_name" content="Cherr0 blogs">
+<meta property="og:description" content="hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/content_sample.png">
+<meta property="article:published_time" content="2022-01-09T04:21:57.000Z">
+<meta property="article:modified_time" content="2022-01-09T04:30:30.676Z">
+<meta property="article:author" content="체로">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/content_sample.png">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://cherr0.github.io/assets/images/kabu.jpg">
+    
+    
+    
+    
+    <link rel="canonical" href="https://cherr0.github.io/2022/01/09/hexo-블로그-관련-커맨드-정리/">
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PJ52H06Z7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7PJ52H06Z7');
+    </script>
+
+
+    
+
+    
+        
+            
+<link rel="stylesheet" href="/assets/css/gitment.css">
+
+        
+    
+    
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="5">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/" aria-label>
+            Cherr0 blogs
+        </a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about" aria-label="링크 열기: /#about">
+        
+        
+            <img class="header-picture" src="/assets/images/kabu.jpg" alt="저자 이미지">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="5">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about" aria-label="저자에 대해 더 알아보기">
+                    <img class="sidebar-profile-picture" src="/assets/images/kabu.jpg" alt="저자 이미지">
+                </a>
+                <h4 class="sidebar-profile-name">체로</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/" rel="noopener" title="Home">
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" rel="noopener" title="카테고리">
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">카테고리</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" rel="noopener" title="태그">
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">태그</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" rel="noopener" title="아카이브">
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">아카이브</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" rel="noopener" title="About">
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/cherr0" target="_blank" rel="external nofollow noopener noreferrer" title="GitHub">
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="http://stackoverflow.com/users" target="_blank" rel="external nofollow noopener noreferrer" title="Stack Overflow">
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="5" class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            hexo 블로그 관련 커맨드 정리
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2022-01-09T13:21:57+09:00">
+	
+		    2022/01/09 13:21:57
+    	
+    </time>
+    
+</div>
+
+    <div class="post-meta">
+    <span>Last Updated  </span>
+    <time datetime="2022-01-09T13:21:57+09:00">
+        
+                2022/01/09 13:30:30
+            
+    </time>
+    </div>
+
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <p>hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리</p>
+<a id="more"></a>
+<h1>서버 관련 커맨드</h1>
+<h3 id="서버-실행">서버 실행</h3>
+<pre><code class="language-bash">hexo server
+// or
+hexo s
+
+// port change
+hexo s -p 23777
+
+// static mode (파일 변경 감지 X)
+hexo s -s
+
+// ip change
+hexo s -i 192.168.1.1
+</code></pre>
+<h1>글 관련 hexo 커맨드</h1>
+<h3 id="초안-글-작성">초안 글 작성</h3>
+<p>hexo에서는 초안으로 글을 작성할 수 있도록 기능을 제공한다.</p>
+<p>초안으로 작성된 글은 <code>source &gt; _draft</code> 폴더에 저장이 된다.</p>
+<p>초안 글 작성 : <code>hexo new draft '파일명'</code></p>
+<p>초안 글 로컬 서버에서 확인 : <code>hexo server --draft -o</code></p>
+<p>초안으로 작성된 글을 post폴더로 이동 : <code>hexo publish '파일명'</code></p>
+<h3 id="글쓰기-새-포스트-생성">글쓰기, 새 포스트 생성</h3>
+<pre><code class="language-bash"># hexo new 레이아웃 종류 '타이틀' 타이틀은 파일명도 되고 포스팅도 제목도 됨
+$ hexo new [layout] &lt;title&gt;
+
+# 예제
+$ hexo new post '파일명'
+</code></pre>
+<h3 id="글-수정-삭제">글 수정, 삭제</h3>
+<p>기존에 만들어진 파일들을 수동으로 수정, 삭제한 후 배포를 진행하면 된다.</p>
+<p>혹시 모를 캐시에 대한 에러를 대비하여 clean 후 배포한다.</p>
+<pre><code class="language-bash">$ hexo clean
+$ hexo g -d
+</code></pre>
+<h3 id="배포-관련-커맨드">배포 관련 커맨드</h3>
+<p>로컬 서버에서 확인 : <code>hexo s</code></p>
+<blockquote>
+<p>draft 확인 시 <code>--draft</code> 추가</p>
+</blockquote>
+<p>정적 파일 생성 : <code>hexo g</code> === <code>hexo generate</code></p>
+<p>정적파일로 생성된 포스팅을 깃허브에 배포 : <code>hexo d</code> === <code>hexo deploy</code></p>
+<p>정적파일 생성 후 바로 배포 : <code>hexo g -d</code></p>
+<h1>글 작성 기본 셋팅</h1>
+<h2 id="상단-구성">상단 구성</h2>
+<pre><code class="language-markdown">---
+layout: post
+title:  &quot;Welcome to devlopr !&quot;
+summary: Hello World ! This is a sample post
+author: John Doe
+date: '2019-05-22 14:35:23 +0530'
+thumbnail: /assets/img/posts/code.jpg
+tags :
+- 헥소
+- 깃허브
+categories : 
+- 카테고리명 #(예) 깃허브
+- 서브 카테고리명 #(예) 핵소
+---
+</code></pre>
+<p><code>title</code> : 생성 시 사용한 파일명이 입력되고 제목이 되는 부분.</p>
+<p><code>date</code> : 파일을 생성한 날짜와 시간이 입력됨</p>
+<p><code>tags</code> : 카테고리처럼 연관된 태그를 작성하여 관리가 가능함</p>
+<p><code>categories</code> : 기본 머리말에는 추가가 되어있지 않지만 추가할 수 있다. scaffolds 폴더 <a target="_blank" rel="external nofollow noopener noreferrer" href="http://post.md">post.md</a> 파일을 열어 수정할수도 있고 글 작성 시마다 추가해도 된다.</p>
+<aside> 💡 이런식으로도 사용 가능함 categories : [깃허브, 헥소] tags : [깃허브, 헥소]
+</aside>
+<h3 id="목록-페이지-요약글">목록 페이지 요약글</h3>
+<p><code>&lt;!-- more --&gt;</code> 을 사용해서 글목록에서 보여지는 요약글을 사용할 수 있다.</p>
+<pre><code class="language-bash">---
+title:
+date:
+categories:
+tags:
+---
+
+본문이 이렇게 있을 때 여기까지만 인덱스 페이지에 나타납니다.
+&lt;!-- more --&gt;
+
+이 이하는 인덱스 페이지에 표시되지 않습니다.
+</code></pre>
+<h1>글 작성 시 필요한 것</h1>
+<p>깃허브 블로그에서 글 작성을 할 경우 마크다운 형식으로 글을 작성하게 된다.</p>
+<h3 id="주-사용-에디터">주 사용 에디터</h3>
+<ul>
+<li>
+<p>VS code</p>
+</li>
+<li>
+<p>Typora : <a target="_blank" rel="external nofollow noopener noreferrer" href="https://typora.io/">https://typora.io/</a></p>
+<p>심플해서 사용하기 편함</p>
+</li>
+<li>
+<p>Stack Edit : <a target="_blank" rel="external nofollow noopener noreferrer" href="https://stackedit.io">https://stackedit.io</a></p>
+<p>Web app 기반이라 설치없이 바로 사용가능</p>
+</li>
+<li>
+<p>하루패드 : <a target="_blank" rel="external nofollow noopener noreferrer" href="http://pad.haroopress.com/">http://pad.haroopress.com/</a></p>
+</li>
+</ul>
+<h3 id="목차-생성">목차 생성</h3>
+<p>각 테마에 따라서 사용하는 방법은 다르지만 tranquilpeak 에선</p>
+<p><code>&lt;!-- toc --&gt;</code> 를 원하는 곳에 작성하면 헤더에 맞춰서 글 목차가 생성된다.</p>
+<img src="content_sample.png" style="width: 300px">
+
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">태그</span><br>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/hexo/" rel="tag">hexo</a>
+
+            </div>
+        
+        
+        
+    
+    
+        
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/01/28/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EA%B8%80%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC/" data-tooltip="마크다운 글작성 방법 정리" aria-label="다음: 마크다운 글작성 방법 정리">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#gitment" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2022 체로. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled" aria-hidden="true">
+                        
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/01/28/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EA%B8%80%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC/" data-tooltip="마크다운 글작성 방법 정리" aria-label="다음: 마크다운 글작성 방법 정리">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#gitment" aria-label="댓글을 남겨주세요">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/kabu.jpg" alt="저자 이미지">
+        
+            <h4 id="about-card-name">체로</h4>
+        
+            <div id="about-card-bio"><p>author.bio</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>author.job</p>
+
+            </div>
+        
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/city.gif');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+        <script>
+          var disqus_config = function() {
+            this.page.url = 'https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/';
+              
+            this.page.identifier = '2022/01/09/hexo-블로그-관련-커맨드-정리/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'cherr0-github-io';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+    
+
+
+
+
+    </body>
+</html>

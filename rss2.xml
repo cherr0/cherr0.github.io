@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Cherr0 blogs</title>
   
-  <subtitle>개발기록 작성중</subtitle>
+  <subtitle>공부기록 작성중</subtitle>
   <link href="https://cherr0.github.io/rss2.xml" rel="self"/>
   
   <link href="https://cherr0.github.io/"/>
-  <updated>2021-07-25T10:00:56.044Z</updated>
+  <updated>2022-01-09T04:30:30.676Z</updated>
   <id>https://cherr0.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo 블로그 관련 커맨드 정리</title>
+    <link href="https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/"/>
+    <id>https://cherr0.github.io/2022/01/09/hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%A7%A8%EB%93%9C-%EC%A0%95%EB%A6%AC/</id>
+    <published>2022-01-09T04:21:57.000Z</published>
+    <updated>2022-01-09T04:30:30.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리</p><a id="more"></a><h1>서버 관련 커맨드</h1><h3 id="서버-실행">서버 실행</h3><pre><code class="language-bash">hexo server// orhexo s// port changehexo s -p 23777// static mode (파일 변경 감지 X)hexo s -s// ip changehexo s -i 192.168.1.1</code></pre><h1>글 관련 hexo 커맨드</h1><h3 id="초안-글-작성">초안 글 작성</h3><p>hexo에서는 초안으로 글을 작성할 수 있도록 기능을 제공한다.</p><p>초안으로 작성된 글은 <code>source &gt; _draft</code> 폴더에 저장이 된다.</p><p>초안 글 작성 : <code>hexo new draft '파일명'</code></p><p>초안 글 로컬 서버에서 확인 : <code>hexo server --draft -o</code></p><p>초안으로 작성된 글을 post폴더로 이동 : <code>hexo publish '파일명'</code></p><h3 id="글쓰기-새-포스트-생성">글쓰기, 새 포스트 생성</h3><pre><code class="language-bash"># hexo new 레이아웃 종류 '타이틀' 타이틀은 파일명도 되고 포스팅도 제목도 됨$ hexo new [layout] &lt;title&gt;# 예제$ hexo new post '파일명'</code></pre><h3 id="글-수정-삭제">글 수정, 삭제</h3><p>기존에 만들어진 파일들을 수동으로 수정, 삭제한 후 배포를 진행하면 된다.</p><p>혹시 모를 캐시에 대한 에러를 대비하여 clean 후 배포한다.</p><pre><code class="language-bash">$ hexo clean$ hexo g -d</code></pre><h3 id="배포-관련-커맨드">배포 관련 커맨드</h3><p>로컬 서버에서 확인 : <code>hexo s</code></p><blockquote><p>draft 확인 시 <code>--draft</code> 추가</p></blockquote><p>정적 파일 생성 : <code>hexo g</code> === <code>hexo generate</code></p><p>정적파일로 생성된 포스팅을 깃허브에 배포 : <code>hexo d</code> === <code>hexo deploy</code></p><p>정적파일 생성 후 바로 배포 : <code>hexo g -d</code></p><h1>글 작성 기본 셋팅</h1><h2 id="상단-구성">상단 구성</h2><pre><code class="language-markdown">---layout: posttitle:  &quot;Welcome to devlopr !&quot;summary: Hello World ! This is a sample postauthor: John Doedate: '2019-05-22 14:35:23 +0530'thumbnail: /assets/img/posts/code.jpgtags :- 헥소- 깃허브categories : - 카테고리명 #(예) 깃허브- 서브 카테고리명 #(예) 핵소---</code></pre><p><code>title</code> : 생성 시 사용한 파일명이 입력되고 제목이 되는 부분.</p><p><code>date</code> : 파일을 생성한 날짜와 시간이 입력됨</p><p><code>tags</code> : 카테고리처럼 연관된 태그를 작성하여 관리가 가능함</p><p><code>categories</code> : 기본 머리말에는 추가가 되어있지 않지만 추가할 수 있다. scaffolds 폴더 <a href="http://post.md">post.md</a> 파일을 열어 수정할수도 있고 글 작성 시마다 추가해도 된다.</p><aside> 💡 이런식으로도 사용 가능함 categories : [깃허브, 헥소] tags : [깃허브, 헥소]</aside><h3 id="목록-페이지-요약글">목록 페이지 요약글</h3><p><code>&lt;!-- more --&gt;</code> 을 사용해서 글목록에서 보여지는 요약글을 사용할 수 있다.</p><pre><code class="language-bash">---title:date:categories:tags:---본문이 이렇게 있을 때 여기까지만 인덱스 페이지에 나타납니다.&lt;!-- more --&gt;이 이하는 인덱스 페이지에 표시되지 않습니다.</code></pre><h1>글 작성 시 필요한 것</h1><p>깃허브 블로그에서 글 작성을 할 경우 마크다운 형식으로 글을 작성하게 된다.</p><h3 id="주-사용-에디터">주 사용 에디터</h3><ul><li><p>VS code</p></li><li><p>Typora : <a href="https://typora.io/">https://typora.io/</a></p><p>심플해서 사용하기 편함</p></li><li><p>Stack Edit : <a href="https://stackedit.io">https://stackedit.io</a></p><p>Web app 기반이라 설치없이 바로 사용가능</p></li><li><p>하루패드 : <a href="http://pad.haroopress.com/">http://pad.haroopress.com/</a></p></li></ul><h3 id="목차-생성">목차 생성</h3><p>각 테마에 따라서 사용하는 방법은 다르지만 tranquilpeak 에선</p><p><code>&lt;!-- toc --&gt;</code> 를 원하는 곳에 작성하면 헤더에 맞춰서 글 목차가 생성된다.</p><img src="content_sample.png" style="width: 300px" />]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;hexo 서버 실행 및 글작성 커맨드와 사용법에 관한 정리&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="hexo" scheme="https://cherr0.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>마크다운 글작성 방법 정리</title>
@@ -27,28 +46,6 @@
     
     
     <summary type="html">&lt;p&gt;목차 테스트&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Test</title>
-    <link href="https://cherr0.github.io/2021/01/28/Test/"/>
-    <id>https://cherr0.github.io/2021/01/28/Test/</id>
-    <published>2021-01-28T04:55:43.000Z</published>
-    <updated>2021-01-28T04:55:43.378Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><!-- toc -->]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;!-- toc --&gt;
-</summary>
-      
     
     
     
@@ -98,26 +95,6 @@
     <category term="Test2" scheme="https://cherr0.github.io/tags/Test2/"/>
     
     <category term="정리본" scheme="https://cherr0.github.io/tags/%EC%A0%95%EB%A6%AC%EB%B3%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://cherr0.github.io/2021/01/25/hello-world/"/>
-    <id>https://cherr0.github.io/2021/01/25/hello-world/</id>
-    <published>2021-01-25T11:19:21.444Z</published>
-    <updated>2021-01-25T11:19:21.444Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><pre><code class="language-bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><pre><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><pre><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><pre><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
